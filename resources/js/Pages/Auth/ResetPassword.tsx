@@ -1,19 +1,12 @@
-import { useEffect, FormEventHandler } from 'react';
+import { FormEventHandler, useEffect } from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
-import PrimaryButton from '@/Components/PrimaryButton';
 import { Head, useForm } from '@inertiajs/react';
 import { Label } from '@/Components/ui/label';
 import { Input } from '@/Components/ui/input';
 import { Button } from '@/Components/ui/button';
 
-export default function ResetPassword({
-    token,
-    email,
-}: {
-    token: string;
-    email: string;
-}) {
+export default function ResetPassword({ token, email }: { token: string; email: string }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         token: token,
         email: email,
@@ -72,9 +65,7 @@ export default function ResetPassword({
                 </div>
 
                 <div className='mt-4'>
-                    <Label htmlFor='password_confirmation'>
-                        Confirm Password
-                    </Label>
+                    <Label htmlFor='password_confirmation'>Confirm Password</Label>
 
                     <Input
                         type='password'
@@ -82,15 +73,10 @@ export default function ResetPassword({
                         value={data.password_confirmation}
                         className='mt-1 block w-full'
                         autoComplete='new-password'
-                        onChange={(e) =>
-                            setData('password_confirmation', e.target.value)
-                        }
+                        onChange={(e) => setData('password_confirmation', e.target.value)}
                     />
 
-                    <InputError
-                        message={errors.password_confirmation}
-                        className='mt-2'
-                    />
+                    <InputError message={errors.password_confirmation} className='mt-2' />
                 </div>
 
                 <div className='flex items-center justify-end mt-4'>

@@ -1,23 +1,13 @@
-import { useEffect, FormEventHandler } from 'react';
-import Checkbox from '@/Components/Checkbox';
+import { FormEventHandler, useEffect } from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { Label } from '@/Components/ui/label';
 import { Input } from '@/Components/ui/input';
 import { Switch } from '@/Components/ui/switch';
 import { Button } from '@/Components/ui/button';
 
-export default function Login({
-    status,
-    canResetPassword,
-}: {
-    status?: string;
-    canResetPassword: boolean;
-}) {
+export default function Login({ status, canResetPassword }: { status?: string; canResetPassword: boolean }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
@@ -40,11 +30,7 @@ export default function Login({
         <GuestLayout>
             <Head title='Log in' />
 
-            {status && (
-                <div className='mb-4 font-medium text-sm text-green-600'>
-                    {status}
-                </div>
-            )}
+            {status && <div className='mb-4 font-medium text-sm text-green-600'>{status}</div>}
 
             <form onSubmit={submit}>
                 <div>
@@ -85,22 +71,16 @@ export default function Login({
                         <Switch
                             name='remember'
                             checked={data.remember}
-                            onCheckedChange={(value) =>
-                                setData('remember', value)
-                            }
+                            onCheckedChange={(value) => setData('remember', value)}
                         />
-                        <span className='ml-2 text-sm text-gray-600'>
-                            Remember me
-                        </span>
+                        <span className='ml-2 text-sm text-gray-600'>Remember me</span>
                     </Label>
                 </div>
 
                 <div className='flex items-center justify-end mt-4'>
                     {canResetPassword && (
                         <Button variant='link' asChild>
-                            <Link href={route('password.request')}>
-                                Forgot your password?
-                            </Link>
+                            <Link href={route('password.request')}>Forgot your password?</Link>
                         </Button>
                     )}
 

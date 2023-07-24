@@ -1,9 +1,5 @@
 import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
 import { Link, useForm, usePage } from '@inertiajs/react';
-import { Transition } from '@headlessui/react';
 import { FormEventHandler } from 'react';
 import { PageProps } from '@/types';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card';
@@ -106,15 +102,7 @@ export default function UpdateProfileInformation({
                             <span>Save</span>
                         </Button>
 
-                        <Transition
-                            show={recentlySuccessful}
-                            enter='transition ease-in-out'
-                            enterFrom='opacity-0'
-                            leave='transition ease-in-out'
-                            leaveTo='opacity-0'
-                        >
-                            <p className='text-sm text-muted-foreground'>Saved.</p>
-                        </Transition>
+                        <p className='text-sm text-muted-foreground animate-in fade-in'>Saved.</p>
                     </div>
                 </form>
             </CardContent>

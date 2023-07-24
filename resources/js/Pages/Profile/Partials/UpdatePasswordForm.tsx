@@ -1,8 +1,6 @@
-import { useRef, FormEventHandler } from 'react';
+import { FormEventHandler, useRef } from 'react';
 import InputError from '@/Components/InputError';
-import PrimaryButton from '@/Components/PrimaryButton';
 import { useForm } from '@inertiajs/react';
-import { Transition } from '@headlessui/react';
 import { Label } from '@/Components/ui/label';
 import { Input } from '@/Components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card';
@@ -102,15 +100,7 @@ export default function UpdatePasswordForm({ className = '' }: { className?: str
                             <span>Save</span>
                         </Button>
 
-                        <Transition
-                            show={recentlySuccessful}
-                            enter='transition ease-in-out'
-                            enterFrom='opacity-0'
-                            leave='transition ease-in-out'
-                            leaveTo='opacity-0'
-                        >
-                            <p className='text-sm text-muted-foreground'>Saved.</p>
-                        </Transition>
+                        <p className='text-sm text-muted-foreground animate-in fade-in'>Saved.</p>
                     </div>
                 </form>
             </CardContent>

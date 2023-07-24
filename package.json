@@ -6,7 +6,6 @@
         "build": "tsc && vite build && vite build --ssr && vite build && vite build --ssr --ssr"
     },
     "devDependencies": {
-        "@headlessui/react": "^1.4.2",
         "@inertiajs/react": "^1.0.0",
         "@tailwindcss/forms": "^0.5.3",
         "@types/node": "^18.13.0",

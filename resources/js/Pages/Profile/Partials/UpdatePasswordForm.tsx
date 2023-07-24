@@ -100,7 +100,9 @@ export default function UpdatePasswordForm({ className = '' }: { className?: str
                             <span>Save</span>
                         </Button>
 
-                        <p className='text-sm text-muted-foreground animate-in fade-in'>Saved.</p>
+                        {recentlySuccessful && (
+                            <p className='text-sm text-muted-foreground animate-in fade-in'>Saved.</p>
+                        )}
                     </div>
                 </form>
             </CardContent>

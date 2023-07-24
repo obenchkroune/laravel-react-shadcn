@@ -31,16 +31,6 @@ export default function AuthenticatedLayout({ children }: PropsWithChildren) {
             href: route('dashboard'),
             current: route().current('dashboard'),
         },
-        {
-            label: 'My bills',
-            href: '#',
-            current: false,
-        },
-        {
-            label: 'Payment history',
-            href: '#',
-            current: false,
-        },
     ];
 
     return (

@@ -22,30 +22,28 @@ export default function Edit({
     >
       <Head title='Profile' />
 
-      <div className='py-12'>
-        <div className='space-y-6'>
-          <Card>
-            <CardContent className='pt-6'>
-              <UpdateProfileInformationForm
-                mustVerifyEmail={mustVerifyEmail}
-                status={status}
-                className='max-w-xl'
-              />
-            </CardContent>
-          </Card>
+      <div className='space-y-6'>
+        <Card>
+          <CardContent className='pt-6'>
+            <UpdateProfileInformationForm
+              mustVerifyEmail={mustVerifyEmail}
+              status={status}
+              className='max-w-xl'
+            />
+          </CardContent>
+        </Card>
 
-          <Card>
-            <CardContent className='pt-6'>
-              <UpdatePasswordForm className='max-w-xl' />
-            </CardContent>
-          </Card>
+        <Card>
+          <CardContent className='pt-6'>
+            <UpdatePasswordForm className='max-w-xl' />
+          </CardContent>
+        </Card>
 
-          <Card>
-            <CardContent className='pt-6'>
-              <DeleteUserForm className='max-w-xl' />
-            </CardContent>
-          </Card>
-        </div>
+        <Card>
+          <CardContent className='pt-6'>
+            <DeleteUserForm className='max-w-xl' />
+          </CardContent>
+        </Card>
       </div>
     </AuthenticatedLayout>
   );

@@ -1,5 +1,5 @@
 import { useState, PropsWithChildren, ReactNode } from 'react';
-import { Link } from '@inertiajs/react';
+import { Link, router } from '@inertiajs/react';
 import { User } from '@/types';
 import { Button } from '@/components/ui/button';
 import {
@@ -132,7 +132,11 @@ export default function Authenticated({
             </SheetContent>
           </Sheet>
           <div className='flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4'>
-            <Button variant='destructive' className='ms-auto'>
+            <Button
+              onClick={() => router.post(route('logout'))}
+              variant='destructive'
+              className='ms-auto'
+            >
               <PowerOff className='h-5 w-5 me-3' />
               Logout
             </Button>

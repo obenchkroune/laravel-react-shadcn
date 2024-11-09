@@ -1,66 +1,165 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel + React + TypeScript + shadcn/ui Starter Template
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?logo=laravel)](https://laravel.com)
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react)](https://reactjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-## About Laravel
+A modern, production-ready full-stack web application starter template combining Laravel's robust backend with React's powerful frontend capabilities, enhanced with TypeScript and beautiful shadcn/ui components.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🌟 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Backend Excellence**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  - 🎯 Laravel 10.x with modern PHP 8.2+ features
+  - 🔒 Built-in authentication system via Laravel Breeze
+  - 🚀 RESTful API support with structured responses
+  - 📝 Comprehensive database migrations and seeders
 
-## Learning Laravel
+- **Frontend Power**
+  - ⚛️ React 18 with TypeScript for type-safe development
+  - 🎨 Pre-configured shadcn/ui components
+  - 🔄 Seamless SPA experience with Inertia.js
+  - 🎭 Lightning-fast HMR with Vite
+  - 🎯 Responsive layouts with Tailwind CSS
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Prerequisites
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP 8.2 or higher
+- Node.js 18 or higher
+- Composer 2.x
+- MySQL 8.0+ or PostgreSQL 13+
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⚙️ Installation
 
-## Laravel Sponsors
+1. Clone the repository:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```sh
+git clone <repository-url>
+cd <project-folder>
+```
 
-### Premium Partners
+2. Install PHP dependencies:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```sh
+composer install
+```
 
-## Contributing
+3. Install Node.js dependencies:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```sh
+npm install
+```
 
-## Code of Conduct
+4. Configure environment:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```sh
+cp .env.example .env
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+5. Setup database:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Update
 
-## License
+.env
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+with your database credentials
+
+- Run migrations:
+
+```sh
+php artisan migrate
+```
+
+## 🔧 Development
+
+Start the development server:
+
+```sh
+composer run-script dev
+```
+
+Other useful commands:
+
+- **Run tests**:
+
+```sh
+php artisan test
+```
+
+- **Lint and fix PHP code**:
+
+```sh
+composer run-script lint
+```
+
+- **Lint and fix JavaScript/TypeScript code**:
+
+```sh
+npm run lint
+```
+
+## 🏗️ Building for Production
+
+```sh
+npm run build
+```
+
+## 🚀 Deployment
+
+1. Build the project:
+
+```sh
+npm run build
+```
+
+2. Deploy the `public` and `inertia` directories to your web server.
+
+3. Ensure your server is configured to serve the `public` directory as the web root.
+
+## 📂 Project Structure
+
+```
+├── app/                    # Laravel application code
+├── inertia/               # React + TypeScript frontend
+│   ├── components/        # Reusable React components
+│   │   └── ui/           # shadcn/ui components
+│   ├── pages/            # Page components
+│   ├── lib/              # Utilities and helpers
+│   └── app.tsx           # Main React application
+├── routes/                # Laravel routes
+├── public/               # Static assets
+└── resources/            # Additional resources
+```
+
+## 📜 Available Scripts
+
+- `npm run build` - Build for production
+- `composer run-script dev` - Start Laravel + Vite development server
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+## 🐛 Troubleshooting
+
+If you encounter any issues, please check the following:
+
+- Ensure all prerequisites are installed and versions are correct.
+- Check the `.env` file for correct configuration.
+- Review the Laravel and React documentation for common issues.
+
+## 🛠️ Tech Stack
+
+- [Laravel](https://laravel.com/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Inertia.js](https://inertiajs.com/)
+- [Vite](https://vitejs.dev/)
+
+## 📄 License
+
+MIT

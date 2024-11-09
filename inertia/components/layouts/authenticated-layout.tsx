@@ -13,7 +13,7 @@ import {
 } from '~/components/ui/navigation-menu';
 import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, useState } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, LogOut, Menu, User, X } from 'lucide-react';
 import { cn } from '~/lib/utils';
 
 export default function Authenticated({ children }: PropsWithChildren) {
@@ -60,18 +60,17 @@ export default function Authenticated({ children }: PropsWithChildren) {
                     <ChevronDown className='ml-2 h-4 w-4' />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align='end'>
-                  <DropdownMenuItem asChild>
-                    <Link href={route('profile.edit')}>Profile</Link>
+                <DropdownMenuContent align='end' className='w-56'>
+                  <DropdownMenuItem className='py-2' asChild>
+                    <Link href={route('profile.edit')}>
+                      <User />
+                      <span>Profile</span>
+                    </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link
-                      as='button'
-                      href={route('logout')}
-                      method='post'
-                      className='block w-full'
-                    >
-                      Log Out
+                  <DropdownMenuItem className='w-full py-2' asChild>
+                    <Link as='button' href={route('logout')} method='post'>
+                      <LogOut />
+                      <span>Log Out</span>
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -122,7 +121,7 @@ export default function Authenticated({ children }: PropsWithChildren) {
             <div className='mt-3 space-y-1'>
               <Link
                 href={route('profile.edit')}
-                className='block px-4 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground'
+                className='flex gap-4 px-4 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground'
               >
                 Profile
               </Link>
@@ -130,7 +129,7 @@ export default function Authenticated({ children }: PropsWithChildren) {
                 as='button'
                 href={route('logout')}
                 method='post'
-                className='block px-4 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground'
+                className='flex gap-4 w-full px-4 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground'
               >
                 Log Out
               </Link>

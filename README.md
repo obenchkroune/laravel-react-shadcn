@@ -60,11 +60,7 @@ php artisan key:generate
 
 5. Setup database:
 
-- Update
-
-.env
-
-with your database credentials
+- Update `.env` with your database credentials
 
 - Run migrations:
 

@@ -9,11 +9,13 @@
         "target": "ESNext",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
         "noEmit": true,
+        "baseUrl": ".",
         "paths": {
-            "@/*": ["./resources/js/*"],
-            "ziggy-js": ["./vendor/tightenco/ziggy"]
+            "~/*": ["inertia/*"],
+            "ziggy-js": ["vendor/tightenco/ziggy"]
         }
     },
-    "include": ["resources/js/**/*.ts", "resources/js/**/*.tsx", "resources/js/**/*.d.ts"]
+    "include": ["inertia/**/*.ts", "inertia/**/*.tsx", "inertia/**/*.d.ts", "inertia/app.tsx", "inertia/bootstrap.ts", "inertia/ssr.tsx"]
 }

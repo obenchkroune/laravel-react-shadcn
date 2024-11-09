@@ -5,15 +5,15 @@ import UpdateProfileInformation from './partials/update-profile-form';
 import { Head } from '@inertiajs/react';
 
 export default function Edit() {
-    return (
-        <AuthenticatedLayout>
-            <Head title='Profile' />
+  return (
+    <AuthenticatedLayout>
+      <Head title='Profile' />
 
-            <div className='space-y-6'>
-                <UpdateProfileInformation />
-                <UpdatePasswordForm />
-                <DeleteUserForm />
-            </div>
-        </AuthenticatedLayout>
-    );
+      <div className='space-y-6'>
+        <UpdateProfileInformation />
+        <UpdatePasswordForm />
+        <DeleteUserForm />
+      </div>
+    </AuthenticatedLayout>
+  );
 }

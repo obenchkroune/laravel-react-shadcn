@@ -76,59 +76,6 @@ Start the development server:
 composer run-script dev
 ```
 
-Other useful commands:
-
-- **Run tests**:
-
-```sh
-php artisan test
-```
-
-- **Lint and fix PHP code**:
-
-```sh
-composer run-script lint
-```
-
-- **Lint and fix JavaScript/TypeScript code**:
-
-```sh
-npm run lint
-```
-
-## 🏗️ Building for Production
-
-```sh
-npm run build
-```
-
-## 🚀 Deployment
-
-1. Build the project:
-
-```sh
-npm run build
-```
-
-2. Deploy the `public` and `inertia` directories to your web server.
-
-3. Ensure your server is configured to serve the `public` directory as the web root.
-
-## 📂 Project Structure
-
-```
-├── app/                    # Laravel application code
-├── inertia/               # React + TypeScript frontend
-│   ├── components/        # Reusable React components
-│   │   └── ui/           # shadcn/ui components
-│   ├── pages/            # Page components
-│   ├── lib/              # Utilities and helpers
-│   └── app.tsx           # Main React application
-├── routes/                # Laravel routes
-├── public/               # Static assets
-└── resources/            # Additional resources
-```
-
 ## 📜 Available Scripts
 
 - `npm run build` - Build for production

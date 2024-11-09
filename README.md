@@ -11,7 +11,7 @@ A modern, production-ready full-stack web application starter template combining
 
 - **Backend Excellence**
 
-  - 🎯 Laravel 10.x with modern PHP 8.2+ features
+  - 🎯 Laravel 11.x with modern PHP 8.3+ features
   - 🔒 Built-in authentication system via Laravel Breeze
   - 🚀 RESTful API support with structured responses
   - 📝 Comprehensive database migrations and seeders

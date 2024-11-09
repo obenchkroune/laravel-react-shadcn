@@ -35,8 +35,8 @@ A modern, production-ready full-stack web application starter template combining
 1. Clone the repository:
 
 ```sh
-git clone <repository-url>
-cd <project-folder>
+git clone https://github.com/obenchkroune/laravel-shadcn-starter
+cd laravel-shadcn-starter
 ```
 
 2. Install PHP dependencies:

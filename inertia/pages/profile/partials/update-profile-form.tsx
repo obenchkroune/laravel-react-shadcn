@@ -1,17 +1,17 @@
-import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
-import { Transition } from "@headlessui/react";
-import { Link, useForm, usePage } from "@inertiajs/react";
-import { FormEventHandler } from "react";
+import { Button } from '~/components/ui/button';
+import { Input } from '~/components/ui/input';
+import { Label } from '~/components/ui/label';
+import { Transition } from '@headlessui/react';
+import { Link, useForm, usePage } from '@inertiajs/react';
+import { FormEventHandler } from 'react';
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from "~/components/ui/card";
-import { PageProps } from "~/types";
+} from '~/components/ui/card';
+import { PageProps } from '~/types';
 
 export default function UpdateProfileInformation() {
     const { mustVerifyEmail, status, auth } = usePage<
@@ -30,13 +30,13 @@ export default function UpdateProfileInformation() {
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
 
-        patch(route("profile.update"));
+        patch(route('profile.update'));
     };
 
     return (
         <Card>
             <CardHeader>
-                <CardTitle className="text-lg font-medium">
+                <CardTitle className='text-lg font-medium'>
                     Profile Information
                 </CardTitle>
 
@@ -46,31 +46,31 @@ export default function UpdateProfileInformation() {
             </CardHeader>
 
             <CardContent>
-                <form onSubmit={submit} className="space-y-6 max-w-xl">
-                    <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
+                <form onSubmit={submit} className='space-y-6 max-w-xl'>
+                    <div className='space-y-2'>
+                        <Label htmlFor='name'>Name</Label>
                         <Input
-                            id="name"
-                            name="name"
+                            id='name'
+                            name='name'
                             value={data.name}
-                            onChange={(e) => setData("name", e.target.value)}
+                            onChange={(e) => setData('name', e.target.value)}
                             required
                             autoFocus
-                            autoComplete="name"
+                            autoComplete='name'
                             error={errors.name}
                         />
                     </div>
 
-                    <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
+                    <div className='space-y-2'>
+                        <Label htmlFor='email'>Email</Label>
                         <Input
-                            id="email"
-                            type="email"
-                            name="email"
+                            id='email'
+                            type='email'
+                            name='email'
                             value={data.email}
-                            onChange={(e) => setData("email", e.target.value)}
+                            onChange={(e) => setData('email', e.target.value)}
                             required
-                            autoComplete="username"
+                            autoComplete='username'
                             error={errors.email}
                         />
                     </div>
@@ -78,16 +78,16 @@ export default function UpdateProfileInformation() {
                     {mustVerifyEmail &&
                         auth.user.email_verified_at === null && (
                             <div>
-                                <p className="mt-2 text-sm text-foreground">
+                                <p className='mt-2 text-sm text-foreground'>
                                     Your email address is unverified.
                                     <Button
-                                        variant="link"
+                                        variant='link'
                                         asChild
-                                        className="px-2"
+                                        className='px-2'
                                     >
                                         <Link
-                                            href={route("verification.send")}
-                                            method="post"
+                                            href={route('verification.send')}
+                                            method='post'
                                         >
                                             Click here to re-send the
                                             verification email.
@@ -95,8 +95,8 @@ export default function UpdateProfileInformation() {
                                     </Button>
                                 </p>
 
-                                {status === "verification-link-sent" && (
-                                    <div className="mt-2 text-sm font-medium text-primary">
+                                {status === 'verification-link-sent' && (
+                                    <div className='mt-2 text-sm font-medium text-primary'>
                                         A new verification link has been sent to
                                         your email address.
                                     </div>
@@ -104,17 +104,17 @@ export default function UpdateProfileInformation() {
                             </div>
                         )}
 
-                    <div className="flex items-center gap-4">
+                    <div className='flex items-center gap-4'>
                         <Button disabled={processing}>Save</Button>
 
                         <Transition
                             show={recentlySuccessful}
-                            enter="transition ease-in-out"
-                            enterFrom="opacity-0"
-                            leave="transition ease-in-out"
-                            leaveTo="opacity-0"
+                            enter='transition ease-in-out'
+                            enterFrom='opacity-0'
+                            leave='transition ease-in-out'
+                            leaveTo='opacity-0'
                         >
-                            <p className="text-sm text-muted-foreground">
+                            <p className='text-sm text-muted-foreground'>
                                 Saved.
                             </p>
                         </Transition>

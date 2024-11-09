@@ -1,23 +1,23 @@
-import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
+import { Button } from '~/components/ui/button';
+import { Input } from '~/components/ui/input';
+import { Label } from '~/components/ui/label';
 import {
     Dialog,
     DialogContent,
     DialogHeader,
     DialogTitle,
     DialogDescription,
-} from "~/components/ui/dialog";
-import { useForm } from "@inertiajs/react";
-import { FormEventHandler, useRef, useState } from "react";
-import { cn } from "~/lib/utils";
+} from '~/components/ui/dialog';
+import { useForm } from '@inertiajs/react';
+import { FormEventHandler, useRef, useState } from 'react';
+import { cn } from '~/lib/utils';
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from "~/components/ui/card";
+} from '~/components/ui/card';
 
 export default function DeleteUserForm() {
     const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
@@ -32,7 +32,7 @@ export default function DeleteUserForm() {
         errors,
         clearErrors,
     } = useForm({
-        password: "",
+        password: '',
     });
 
     const confirmUserDeletion = () => {
@@ -42,7 +42,7 @@ export default function DeleteUserForm() {
     const deleteUser: FormEventHandler = (e) => {
         e.preventDefault();
 
-        destroy(route("profile.destroy"), {
+        destroy(route('profile.destroy'), {
             preserveScroll: true,
             onSuccess: () => closeModal(),
             onError: () => passwordInput.current?.focus(),
@@ -59,8 +59,8 @@ export default function DeleteUserForm() {
 
     return (
         <Card>
-            <CardHeader className="max-w-xl">
-                <CardTitle className="text-lg font-medium">
+            <CardHeader className='max-w-xl'>
+                <CardTitle className='text-lg font-medium'>
                     Delete Account
                 </CardTitle>
 
@@ -73,17 +73,17 @@ export default function DeleteUserForm() {
             </CardHeader>
 
             <CardContent>
-                <Button variant="destructive" onClick={confirmUserDeletion}>
+                <Button variant='destructive' onClick={confirmUserDeletion}>
                     Delete Account
                 </Button>
 
                 <Dialog open={confirmingUserDeletion} onOpenChange={closeModal}>
                     <DialogContent>
                         <DialogHeader>
-                            <DialogTitle className="text-foreground">
+                            <DialogTitle className='text-foreground'>
                                 Are you sure you want to delete your account?
                             </DialogTitle>
-                            <DialogDescription className="text-muted-foreground">
+                            <DialogDescription className='text-muted-foreground'>
                                 Once your account is deleted, all of its
                                 resources and data will be permanently deleted.
                                 Please enter your password to confirm you would
@@ -91,37 +91,37 @@ export default function DeleteUserForm() {
                             </DialogDescription>
                         </DialogHeader>
 
-                        <form onSubmit={deleteUser} className="space-y-6">
-                            <div className="space-y-2">
-                                <Label htmlFor="password" className="sr-only">
+                        <form onSubmit={deleteUser} className='space-y-6'>
+                            <div className='space-y-2'>
+                                <Label htmlFor='password' className='sr-only'>
                                     Password
                                 </Label>
                                 <Input
-                                    id="password"
-                                    type="password"
-                                    name="password"
+                                    id='password'
+                                    type='password'
+                                    name='password'
                                     ref={passwordInput}
                                     value={data.password}
                                     onChange={(e) =>
-                                        setData("password", e.target.value)
+                                        setData('password', e.target.value)
                                     }
-                                    placeholder="Password"
+                                    placeholder='Password'
                                     error={errors.password}
                                     autoFocus
                                 />
                             </div>
 
-                            <div className="flex justify-end gap-4">
+                            <div className='flex justify-end gap-4'>
                                 <Button
-                                    type="button"
-                                    variant="secondary"
+                                    type='button'
+                                    variant='secondary'
                                     onClick={closeModal}
                                 >
                                     Cancel
                                 </Button>
                                 <Button
-                                    type="submit"
-                                    variant="destructive"
+                                    type='submit'
+                                    variant='destructive'
                                     disabled={processing}
                                 >
                                     Delete Account

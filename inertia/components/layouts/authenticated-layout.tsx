@@ -41,7 +41,7 @@ export default function Authenticated({ children }: PropsWithChildren) {
                         href={route('dashboard')}
                         className={cn(
                           'group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50',
-                          route().current('dashboard') && 'bg-accent/50',
+                          route().current('dashboard') && 'bg-accent/50'
                         )}
                       >
                         Dashboard
@@ -65,7 +65,12 @@ export default function Authenticated({ children }: PropsWithChildren) {
                     <Link href={route('profile.edit')}>Profile</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link as='button' href={route('logout')} method='post'>
+                    <Link
+                      as='button'
+                      href={route('logout')}
+                      method='post'
+                      className='block w-full'
+                    >
                       Log Out
                     </Link>
                   </DropdownMenuItem>
@@ -97,7 +102,7 @@ export default function Authenticated({ children }: PropsWithChildren) {
               href={route('dashboard')}
               className={cn(
                 'block w-full px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground',
-                route().current('dashboard') && 'bg-accent/50',
+                route().current('dashboard') && 'bg-accent/50'
               )}
             >
               Dashboard

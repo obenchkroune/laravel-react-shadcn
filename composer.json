@@ -13,6 +13,9 @@
     "laravel/framework": "^11.9",
     "laravel/sanctum": "^4.0",
     "laravel/tinker": "^2.9",
+    "spatie/enum": "^3.13",
+    "spatie/laravel-data": "^4.11",
+    "spatie/laravel-typescript-transformer": "^2.5",
     "tightenco/ziggy": "^2.0"
   },
   "require-dev": {
@@ -45,9 +48,7 @@
       "@php artisan package:discover --ansi"
     ],
     "post-update-cmd": [
-      "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-      "@php artisan ide-helper:generate",
-      "@php artisan ide-helper:models"
+      "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
     ],
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

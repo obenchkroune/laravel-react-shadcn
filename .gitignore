@@ -23,3 +23,6 @@ yarn-error.log
 /.zed
 _ide_helper.php
 _ide_helper_models.php
+.bun.lockb
+package-lock.json
+composer.lock

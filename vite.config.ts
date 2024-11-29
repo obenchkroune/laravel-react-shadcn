@@ -7,8 +7,13 @@ import { watch } from 'vite-plugin-watch';
 export default defineConfig({
   plugins: [
     watch({
-      pattern: 'app/{Data,Enums}/**/*.php',
-      command: 'php artisan typescript:transform',
+      pattern: [
+          'app/Enums/**/*.php',
+          'app/Models/**/*.php',
+          'app/Http/Requests/**/*.php',
+          'routes/**/*.php'
+      ],
+      command: 'npm run generate-types',
     }),
     laravel({
       input: 'inertia/app.tsx',

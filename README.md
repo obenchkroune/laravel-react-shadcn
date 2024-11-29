@@ -79,7 +79,15 @@ composer run-script dev
 ## 📜 Available Scripts
 
 - `npm run build` - Build for production
-- `composer run-script dev` - Start Laravel + Vite development server
+- `composer run-script dev` - Start Laravel + Vite development server in addition to the typescript types generator
+
+## Typescript types generation
+
+- generate typescript types for
+    - Laravel Models
+    - PHP enums `app/Enums/**/*.php`
+    - Routes name and parameters types `route()`
+    - Form Requests `app/Http/Requests`
 
 ## 🤝 Contributing
 

@@ -4,12 +4,12 @@ import { route as ziggyRoute } from 'ziggy-js';
 import { PageProps as AppPageProps } from './';
 
 declare global {
-  interface Window {
-    axios: AxiosInstance;
-  }
+    interface Window {
+        axios: AxiosInstance;
+    }
 
-  /* eslint-disable no-var */
-  var route: typeof ziggyRoute;
+    var route: typeof ziggyRoute;
+    var Ziggy: ZiggyConfig;
 }
 
 declare module '@inertiajs/core' {

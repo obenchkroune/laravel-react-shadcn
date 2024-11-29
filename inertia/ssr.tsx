@@ -15,7 +15,7 @@ createServer((page) =>
         resolve: (name) =>
             resolvePageComponent(
                 `./pages/${name}.tsx`,
-                import.meta.glob('./pages/**/*.tsx')
+                import.meta.glob('./pages/**/*.tsx'),
             ),
         setup: ({ App, props }) => {
             /* eslint-disable */
@@ -23,11 +23,11 @@ createServer((page) =>
             global.route<RouteName> = (name, params, absolute) =>
                 route(name, params as any, absolute, {
                     ...page.props.ziggy,
-                    location: new URL(page.props.ziggy.location)
+                    location: new URL(page.props.ziggy.location),
                 });
             /* eslint-enable */
 
             return <App {...props} />;
-        }
-    })
+        },
+    }),
 );

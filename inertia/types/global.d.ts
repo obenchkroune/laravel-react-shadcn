@@ -1,14 +1,22 @@
 import { PageProps as InertiaPageProps } from '@inertiajs/core';
 import { AxiosInstance } from 'axios';
-import { route as ziggyRoute } from 'ziggy-js';
+import { Config, route as ziggyRoute } from 'ziggy-js';
 import { PageProps as AppPageProps } from './';
+import { RouteParams } from './param';
+import { CustomRouter } from './route';
 
 declare global {
     interface Window {
         axios: AxiosInstance;
     }
 
-    var route: typeof ziggyRoute;
+    var route: (<T extends keyof RouteParams>() => CustomRouter<T>) &
+        (<T extends keyof RouteParams>(
+            name: T,
+            params?: RouteParams[T],
+            absolute?: boolean,
+            config?: Config
+        ) => string);
     var Ziggy: ZiggyConfig;
 }
 

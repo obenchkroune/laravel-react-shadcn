@@ -69,13 +69,14 @@ export function MobileMenu({ links, toggle, show }: MobileMenuProps) {
 
             <div className="mt-3 space-y-1">
               <MobileMenuButton
-                onClick={() => toggle}
+                onClick={() => toggle()}
                 href={route('profile.edit')}
                 current={route().current('profile.edit')}
               >
                 Profile
               </MobileMenuButton>
               <MobileMenuButton
+                onClick={() => toggle()}
                 as="button"
                 href={route('logout')}
                 method="post"

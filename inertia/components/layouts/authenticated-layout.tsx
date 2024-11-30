@@ -21,11 +21,6 @@ export default function Authenticated({ children }: PropsWithChildren) {
             href: route('dashboard'),
             current: route().current('dashboard'),
         },
-        {
-            label: 'Todos',
-            href: route('todos.index'),
-            current: route().current('todos.index'),
-        },
     ];
 
     const user = usePage().props.auth.user;

@@ -9,26 +9,26 @@ A modern, production-ready full-stack web application starter template combining
 
 ## 🌟 Features
 
-- **Backend Excellence**
+-   **Backend Excellence**
 
-  - 🎯 Laravel 11.x with modern PHP 8.3+ features
-  - 🔒 Built-in authentication system via Laravel Breeze
-  - 🚀 RESTful API support with structured responses
-  - 📝 Comprehensive database migrations and seeders
+    -   🎯 Laravel 11.x with modern PHP 8.3+ features
+    -   🔒 Built-in authentication system via Laravel Breeze
+    -   🚀 RESTful API support with structured responses
+    -   📝 Comprehensive database migrations and seeders
 
-- **Frontend Power**
-  - ⚛️ React 18 with TypeScript for type-safe development
-  - 🎨 Pre-configured shadcn/ui components
-  - 🔄 Seamless SPA experience with Inertia.js
-  - 🎭 Lightning-fast HMR with Vite
-  - 🎯 Responsive layouts with Tailwind CSS
+-   **Frontend Power**
+    -   ⚛️ React 18 with TypeScript for type-safe development
+    -   🎨 Pre-configured shadcn/ui components
+    -   🔄 Seamless SPA experience with Inertia.js
+    -   🎭 Lightning-fast HMR with Vite
+    -   🎯 Responsive layouts with Tailwind CSS
 
 ## 🚀 Prerequisites
 
-- PHP 8.2 or higher
-- Node.js 18 or higher
-- Composer 2.x
-- MySQL 8.0+ or PostgreSQL 13+
+-   PHP 8.2 or higher
+-   Node.js 18 or higher
+-   Composer 2.x
+-   MySQL 8.0+ or PostgreSQL 13+
 
 ## ⚙️ Installation
 
@@ -39,33 +39,11 @@ git clone https://github.com/obenchkroune/laravel-shadcn-starter
 cd laravel-shadcn-starter
 ```
 
-2. Install PHP dependencies:
+2. Run the setup script:
 
 ```sh
-composer install
-```
-
-3. Install Node.js dependencies:
-
-```sh
-npm install
-```
-
-4. Configure environment:
-
-```sh
-cp .env.example .env
-php artisan key:generate
-```
-
-5. Setup database:
-
-- Update `.env` with your database credentials
-
-- Run migrations:
-
-```sh
-php artisan migrate
+chmod +x setup.sh
+./setup.sh
 ```
 
 ## 🔧 Development
@@ -78,16 +56,16 @@ composer run-script dev
 
 ## 📜 Available Scripts
 
-- `npm run build` - Build for production
-- `composer run-script dev` - Start Laravel + Vite development server in addition to the typescript types generator
+-   `npm run build` - Build for production
+-   `composer run-script dev` - Start Laravel + Vite development server in addition to the typescript types generator
 
 ## Typescript types generation
 
-- generate typescript types for
-    - Laravel Models
-    - PHP enums `app/Enums/**/*.php`
-    - Routes name and parameters types `route()`
-    - Form Requests `app/Http/Requests`
+-   generate typescript types for
+    -   Laravel Models
+    -   PHP enums `app/Enums/**/*.php`
+    -   Routes name and parameters types `route()`
+    -   Form Requests `app/Http/Requests`
 
 ## 🤝 Contributing
 
@@ -97,19 +75,19 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 If you encounter any issues, please check the following:
 
-- Ensure all prerequisites are installed and versions are correct.
-- Check the `.env` file for correct configuration.
-- Review the Laravel and React documentation for common issues.
+-   Ensure all prerequisites are installed and versions are correct.
+-   Check the `.env` file for correct configuration.
+-   Review the Laravel and React documentation for common issues.
 
 ## 🛠️ Tech Stack
 
-- [Laravel](https://laravel.com/)
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [shadcn/ui](https://ui.shadcn.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Inertia.js](https://inertiajs.com/)
-- [Vite](https://vitejs.dev/)
+-   [Laravel](https://laravel.com/)
+-   [React](https://reactjs.org/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [shadcn/ui](https://ui.shadcn.com/)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [Inertia.js](https://inertiajs.com/)
+-   [Vite](https://vitejs.dev/)
 
 ## 📄 License
 

@@ -6,20 +6,20 @@ import { RouteParams } from './param';
 import { CustomRouter } from './route';
 
 declare global {
-    interface Window {
-        axios: AxiosInstance;
-    }
+  interface Window {
+    axios: AxiosInstance;
+  }
 
-    var route: (<T extends keyof RouteParams>() => CustomRouter<T>) &
-        (<T extends keyof RouteParams>(
-            name: T,
-            params?: RouteParams[T],
-            absolute?: boolean,
-            config?: Config
-        ) => string);
-    var Ziggy: ZiggyConfig;
+  var route: (<T extends keyof RouteParams>() => CustomRouter<T>) &
+    (<T extends keyof RouteParams>(
+      name: T,
+      params?: RouteParams[T],
+      absolute?: boolean,
+      config?: Config,
+    ) => string);
+  var Ziggy: ZiggyConfig;
 }
 
 declare module '@inertiajs/core' {
-    interface PageProps extends InertiaPageProps, AppPageProps {}
+  interface PageProps extends InertiaPageProps, AppPageProps {}
 }

@@ -11,24 +11,31 @@ import {
   CardHeader,
   CardTitle,
 } from '~/components/ui/card';
+import { useToast } from '~/hooks/use-toast';
 
 export default function UpdatePasswordForm() {
   const passwordInput = useRef<HTMLInputElement>(null);
   const currentPasswordInput = useRef<HTMLInputElement>(null);
 
-  const { data, setData, errors, put, reset, processing, recentlySuccessful } =
-    useForm({
-      current_password: '',
-      password: '',
-      password_confirmation: '',
-    });
+  const { toast } = useToast();
+  const { data, setData, errors, put, reset, processing } = useForm({
+    current_password: '',
+    password: '',
+    password_confirmation: '',
+  });
 
   const updatePassword: FormEventHandler = (e) => {
     e.preventDefault();
 
     put(route('password.update'), {
       preserveScroll: true,
-      onSuccess: () => reset(),
+      onSuccess: () => {
+        reset();
+        toast({
+          title: 'Password Updated',
+          description: 'Your password has been updated.',
+        });
+      },
       onError: (errors) => {
         if (errors.password) {
           reset('password', 'password_confirmation');
@@ -98,16 +105,6 @@ export default function UpdatePasswordForm() {
 
           <div className="flex items-center gap-4">
             <Button loading={processing}>Save</Button>
-
-            <Transition
-              show={recentlySuccessful}
-              enter="transition ease-in-out"
-              enterFrom="opacity-0"
-              leave="transition ease-in-out"
-              leaveTo="opacity-0"
-            >
-              <p className="text-sm text-muted-foreground">Saved.</p>
-            </Transition>
           </div>
         </form>
       </CardContent>

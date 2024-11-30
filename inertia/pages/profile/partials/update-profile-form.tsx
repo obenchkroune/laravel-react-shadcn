@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from '~/components/ui/card';
 import { PageProps } from '~/types';
+import { useToast } from '~/hooks/use-toast';
 
 export default function UpdateProfileInformation() {
   const { mustVerifyEmail, status, auth } = usePage<
@@ -21,16 +22,23 @@ export default function UpdateProfileInformation() {
     }>
   >().props;
 
-  const { data, setData, patch, errors, processing, recentlySuccessful } =
-    useForm({
-      name: auth.user.name,
-      email: auth.user.email,
-    });
+  const { toast } = useToast();
+  const { data, setData, patch, errors, processing } = useForm({
+    name: auth.user.name,
+    email: auth.user.email,
+  });
 
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
 
-    patch(route('profile.update'));
+    patch(route('profile.update'), {
+      onSuccess: () => {
+        toast({
+          title: 'Profile Updated',
+          description: 'Profile updated successfully.',
+        });
+      },
+    });
   };
 
   return (
@@ -96,16 +104,6 @@ export default function UpdateProfileInformation() {
 
           <div className="flex items-center gap-4">
             <Button loading={processing}>Save</Button>
-
-            <Transition
-              show={recentlySuccessful}
-              enter="transition ease-in-out"
-              enterFrom="opacity-0"
-              leave="transition ease-in-out"
-              leaveTo="opacity-0"
-            >
-              <p className="text-sm text-muted-foreground">Saved.</p>
-            </Transition>
           </div>
         </form>
       </CardContent>

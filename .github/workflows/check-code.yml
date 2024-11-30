@@ -1,0 +1,37 @@
+name: Check Code Quality and TypeScript
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    lint-and-type-check:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Bun
+              uses: oven-sh/setup-bun@v1
+              with:
+                  bun-version: latest
+
+            - name: Install dependencies
+              run: bun install
+
+            - name: Run TypeScript check
+              run: bunx tsc --noEmit
+
+            - name: Set up PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.3'
+
+            - name: Install Composer dependencies
+              run: composer install --no-scripts --no-progress --prefer-dist
+
+            - name: Run Pint
+              run: ./vendor/bin/pint

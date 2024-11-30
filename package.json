@@ -34,11 +34,13 @@
         "@radix-ui/react-slot": "^1.1.0",
         "@radix-ui/react-switch": "^1.1.1",
         "@radix-ui/react-toggle": "^1.1.0",
+        "@uidotdev/usehooks": "^2.4.1",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
         "lucide-react": "^0.456.0",
         "tailwind-merge": "^2.5.4",
         "tailwindcss-animate": "^1.0.7",
+        "vaul": "^1.1.1",
         "vite-plugin-watch": "^0.3.1"
     }
 }

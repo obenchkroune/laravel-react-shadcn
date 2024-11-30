@@ -25,6 +25,9 @@ jobs:
             - name: Run TypeScript check
               run: bunx tsc --noEmit
 
+            -name: Run Prettier
+              run: bunx prettier --check inertia
+
             - name: Set up PHP
               uses: shivammathur/setup-php@v2
               with:

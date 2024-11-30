@@ -26,3 +26,4 @@ _ide_helper_models.php
 .bun.lockb
 package-lock.json
 composer.lock
+bun.lockb

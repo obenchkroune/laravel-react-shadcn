@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -e
+
 # install php dependencies
 composer install
 
@@ -55,10 +57,20 @@ prompt_yes_no() {
     done
 }
 
+# Generate IDE helper files
+if prompt_yes_no "Do you want to generate IDE helper files?"; then
+    echo "Generating IDE helper files..."
+    php artisan ide-helper:generate
+    php artisan ide-helper:eloquent
+    php artisan ide-helper:models --nowrite
+else
+    echo "Skipping IDE helper files generation"
+fi
+
 # Ask to run composer dev
 if prompt_yes_no "Do you want to run composer dev script?"; then
     echo "Running composer dev script..."
-    composer run dev
+    composer run-script dev
 else
     echo "Skipping composer dev script"
 fi

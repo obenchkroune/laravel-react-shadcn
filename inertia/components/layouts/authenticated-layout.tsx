@@ -1,12 +1,12 @@
-import { Link, usePage } from '@inertiajs/react';
-import { PropsWithChildren, useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import ApplicationLogo from '~/components/application-logo';
-import { Button } from '~/components/ui/button';
-import { Navigation } from './navigation';
-import { UserDropdown } from './user-dropdown';
-import { MobileMenu } from './mobile-menu';
-import { useToggle } from '@uidotdev/usehooks';
+import { Link, usePage } from "@inertiajs/react";
+import { PropsWithChildren, useState } from "react";
+import { Menu, X } from "lucide-react";
+import ApplicationLogo from "~/components/application-logo";
+import { Button } from "~/components/ui/button";
+import { Navigation } from "./navigation";
+import { UserDropdown } from "./user-dropdown";
+import { MobileMenu } from "./mobile-menu";
+import { useToggle } from "@uidotdev/usehooks";
 
 export type NavigationLink = {
   label: string;
@@ -17,9 +17,9 @@ export type NavigationLink = {
 export default function Authenticated({ children }: PropsWithChildren) {
   const links: NavigationLink[] = [
     {
-      label: 'Dashboard',
-      href: route('dashboard'),
-      current: route().current('dashboard'),
+      label: "Dashboard",
+      href: route("dashboard"),
+      current: route().current("dashboard"),
     },
   ];
 

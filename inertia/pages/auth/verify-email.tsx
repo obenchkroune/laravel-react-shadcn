@@ -1,7 +1,7 @@
-import GuestLayout from '~/components/layouts/guest-layout';
-import { Button } from '~/components/ui/button';
-import { Head, Link, useForm } from '@inertiajs/react';
-import { FormEventHandler } from 'react';
+import GuestLayout from "~/components/layouts/guest-layout";
+import { Button } from "~/components/ui/button";
+import { Head, Link, useForm } from "@inertiajs/react";
+import { FormEventHandler } from "react";
 
 export default function VerifyEmail({ status }: { status?: string }) {
   const { post, processing } = useForm({});
@@ -9,7 +9,7 @@ export default function VerifyEmail({ status }: { status?: string }) {
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
 
-    post(route('verification.send'));
+    post(route("verification.send"));
   };
 
   return (
@@ -22,7 +22,7 @@ export default function VerifyEmail({ status }: { status?: string }) {
         didn't receive the email, we will gladly send you another.
       </div>
 
-      {status === 'verification-link-sent' && (
+      {status === "verification-link-sent" && (
         <div className="mb-4 text-sm font-medium text-green-500">
           A new verification link has been sent to the email address you
           provided during registration.
@@ -34,7 +34,7 @@ export default function VerifyEmail({ status }: { status?: string }) {
           <Button loading={processing}>Resend Verification Email</Button>
 
           <Button variant="link" asChild>
-            <Link href={route('logout')} method="post" as="button">
+            <Link href={route("logout")} method="post" as="button">
               Log Out
             </Link>
           </Button>

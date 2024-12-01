@@ -1,10 +1,10 @@
-import { Button } from '~/components/ui/button';
-import { Input } from '~/components/ui/input';
-import { Label } from '~/components/ui/label';
-import { Switch } from '~/components/ui/switch';
-import GuestLayout from '~/components/layouts/guest-layout';
-import { Head, Link, useForm } from '@inertiajs/react';
-import { FormEventHandler } from 'react';
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
+import { Switch } from "~/components/ui/switch";
+import GuestLayout from "~/components/layouts/guest-layout";
+import { Head, Link, useForm } from "@inertiajs/react";
+import { FormEventHandler } from "react";
 
 export default function Login({
   status,
@@ -14,16 +14,16 @@ export default function Login({
   canResetPassword: boolean;
 }) {
   const { data, setData, post, processing, errors, reset } = useForm({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
     remember: false,
   });
 
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
 
-    post(route('login'), {
-      onFinish: () => reset('password'),
+    post(route("login"), {
+      onFinish: () => reset("password"),
     });
   };
 
@@ -46,7 +46,7 @@ export default function Login({
             value={data.email}
             className="mt-1 block w-full"
             autoComplete="username"
-            onChange={(e) => setData('email', e.target.value)}
+            onChange={(e) => setData("email", e.target.value)}
             error={errors.email}
             autoFocus
           />
@@ -62,7 +62,7 @@ export default function Login({
             value={data.password}
             className="mt-1 block w-full"
             autoComplete="current-password"
-            onChange={(e) => setData('password', e.target.value)}
+            onChange={(e) => setData("password", e.target.value)}
             error={errors.password}
           />
         </div>
@@ -71,7 +71,7 @@ export default function Login({
           <Switch
             name="remember"
             checked={data.remember}
-            onCheckedChange={(checked) => setData('remember', checked)}
+            onCheckedChange={(checked) => setData("remember", checked)}
             id="remember-me"
           />
           <Label htmlFor="remember-me">Remember me</Label>
@@ -80,7 +80,7 @@ export default function Login({
         <div className="flex items-center justify-end">
           {canResetPassword && (
             <Button variant="link" asChild>
-              <Link href={route('password.request')}>
+              <Link href={route("password.request")}>
                 Forgot your password?
               </Link>
             </Button>

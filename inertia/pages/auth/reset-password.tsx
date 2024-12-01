@@ -1,9 +1,9 @@
-import GuestLayout from '~/components/layouts/guest-layout';
-import { Button } from '~/components/ui/button';
-import { Input } from '~/components/ui/input';
-import { Label } from '~/components/ui/label';
-import { Head, useForm } from '@inertiajs/react';
-import { FormEventHandler } from 'react';
+import GuestLayout from "~/components/layouts/guest-layout";
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
+import { Head, useForm } from "@inertiajs/react";
+import { FormEventHandler } from "react";
 
 export default function ResetPassword({
   token,
@@ -15,15 +15,15 @@ export default function ResetPassword({
   const { data, setData, post, processing, errors, reset } = useForm({
     token: token,
     email: email,
-    password: '',
-    password_confirmation: '',
+    password: "",
+    password_confirmation: "",
   });
 
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
 
-    post(route('password.store'), {
-      onFinish: () => reset('password', 'password_confirmation'),
+    post(route("password.store"), {
+      onFinish: () => reset("password", "password_confirmation"),
     });
   };
 
@@ -42,7 +42,7 @@ export default function ResetPassword({
             value={data.email}
             className="mt-1 block w-full"
             autoComplete="username"
-            onChange={(e) => setData('email', e.target.value)}
+            onChange={(e) => setData("email", e.target.value)}
             error={errors.email}
           />
         </div>
@@ -56,7 +56,7 @@ export default function ResetPassword({
             value={data.password}
             className="mt-1 block w-full"
             autoComplete="new-password"
-            onChange={(e) => setData('password', e.target.value)}
+            onChange={(e) => setData("password", e.target.value)}
             error={errors.password}
             autoFocus
           />
@@ -71,7 +71,7 @@ export default function ResetPassword({
             value={data.password_confirmation}
             className="mt-1 block w-full"
             autoComplete="new-password"
-            onChange={(e) => setData('password_confirmation', e.target.value)}
+            onChange={(e) => setData("password_confirmation", e.target.value)}
             error={errors.password_confirmation}
           />
         </div>

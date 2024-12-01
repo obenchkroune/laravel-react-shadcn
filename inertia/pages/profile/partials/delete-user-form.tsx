@@ -1,23 +1,23 @@
-import { Button } from '~/components/ui/button';
-import { Input } from '~/components/ui/input';
-import { Label } from '~/components/ui/label';
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from '~/components/ui/dialog';
-import { useForm } from '@inertiajs/react';
-import { FormEventHandler, useRef, useState } from 'react';
-import { cn } from '~/lib/utils';
+} from "~/components/ui/dialog";
+import { useForm } from "@inertiajs/react";
+import { FormEventHandler, useRef, useState } from "react";
+import { cn } from "~/lib/utils";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '~/components/ui/card';
+} from "~/components/ui/card";
 
 export default function DeleteUserForm() {
   const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
@@ -32,7 +32,7 @@ export default function DeleteUserForm() {
     errors,
     clearErrors,
   } = useForm({
-    password: '',
+    password: "",
   });
 
   const confirmUserDeletion = () => {
@@ -42,7 +42,7 @@ export default function DeleteUserForm() {
   const deleteUser: FormEventHandler = (e) => {
     e.preventDefault();
 
-    destroy(route('profile.destroy'), {
+    destroy(route("profile.destroy"), {
       preserveScroll: true,
       onSuccess: () => closeModal(),
       onError: () => passwordInput.current?.focus(),
@@ -98,7 +98,7 @@ export default function DeleteUserForm() {
                   name="password"
                   ref={passwordInput}
                   value={data.password}
-                  onChange={(e) => setData('password', e.target.value)}
+                  onChange={(e) => setData("password", e.target.value)}
                   placeholder="Password"
                   error={errors.password}
                   autoFocus

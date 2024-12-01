@@ -1,23 +1,23 @@
-import { Button } from '~/components/ui/button';
-import { Input } from '~/components/ui/input';
-import { Label } from '~/components/ui/label';
-import GuestLayout from '~/components/layouts/guest-layout';
-import { Head, Link, useForm } from '@inertiajs/react';
-import { FormEventHandler } from 'react';
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
+import GuestLayout from "~/components/layouts/guest-layout";
+import { Head, Link, useForm } from "@inertiajs/react";
+import { FormEventHandler } from "react";
 
 export default function Register() {
   const { data, setData, post, processing, errors, reset } = useForm({
-    name: '',
-    email: '',
-    password: '',
-    password_confirmation: '',
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
   });
 
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
 
-    post(route('register'), {
-      onFinish: () => reset('password', 'password_confirmation'),
+    post(route("register"), {
+      onFinish: () => reset("password", "password_confirmation"),
     });
   };
 
@@ -34,7 +34,7 @@ export default function Register() {
             value={data.name}
             autoComplete="name"
             autoFocus
-            onChange={(e) => setData('name', e.target.value)}
+            onChange={(e) => setData("name", e.target.value)}
             error={errors.name}
             required
           />
@@ -48,7 +48,7 @@ export default function Register() {
             name="email"
             value={data.email}
             autoComplete="username"
-            onChange={(e) => setData('email', e.target.value)}
+            onChange={(e) => setData("email", e.target.value)}
             error={errors.email}
             required
           />
@@ -62,7 +62,7 @@ export default function Register() {
             name="password"
             value={data.password}
             autoComplete="new-password"
-            onChange={(e) => setData('password', e.target.value)}
+            onChange={(e) => setData("password", e.target.value)}
             error={errors.password}
             required
           />
@@ -76,7 +76,7 @@ export default function Register() {
             name="password_confirmation"
             value={data.password_confirmation}
             autoComplete="new-password"
-            onChange={(e) => setData('password_confirmation', e.target.value)}
+            onChange={(e) => setData("password_confirmation", e.target.value)}
             error={errors.password_confirmation}
             required
           />
@@ -84,7 +84,7 @@ export default function Register() {
 
         <div className="flex items-center justify-end">
           <Button variant="link" asChild>
-            <Link href={route('login')}>Already registered?</Link>
+            <Link href={route("login")}>Already registered?</Link>
           </Button>
 
           <Button className="ml-4" loading={processing}>

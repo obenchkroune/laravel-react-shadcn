@@ -1,5 +1,5 @@
-import type { Config, Router } from 'ziggy-js';
-import type { RouteParams } from './param';
+import type { Config, Router } from "ziggy-js";
+import type { RouteParams } from "./param";
 type CustomRouter<T> = {
   get params(): RouteParams[T];
   current(): Extract<keyof RouteParams, T> | undefined;
@@ -17,7 +17,7 @@ declare global {
     config?: Config,
   ): string;
 }
-declare module 'vue' {
+declare module "vue" {
   interface ComponentCustomProperties {
     route: (<T extends keyof RouteParams>() => CustomRouter<T>) &
       (<T extends keyof RouteParams>(

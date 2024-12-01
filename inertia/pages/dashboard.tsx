@@ -1,6 +1,6 @@
-import AuthenticatedLayout from '~/components/layouts/authenticated-layout';
-import { Card, CardContent } from '~/components/ui/card';
-import { Head } from '@inertiajs/react';
+import AuthenticatedLayout from "~/components/layouts/authenticated-layout";
+import { Card, CardContent } from "~/components/ui/card";
+import { Head } from "@inertiajs/react";
 
 export default function Dashboard() {
   return (

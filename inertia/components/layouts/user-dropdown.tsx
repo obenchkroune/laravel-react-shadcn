@@ -1,12 +1,12 @@
-import { Link } from '@inertiajs/react';
-import { Button } from '~/components/ui/button';
+import { Link } from "@inertiajs/react";
+import { Button } from "~/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '~/components/ui/dropdown-menu';
-import { ChevronDown, LogOut, User } from 'lucide-react';
+} from "~/components/ui/dropdown-menu";
+import { ChevronDown, LogOut, User } from "lucide-react";
 
 interface UserDropdownProps {
   user: {
@@ -25,13 +25,13 @@ export function UserDropdown({ user }: UserDropdownProps) {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuItem className="py-2" asChild>
-          <Link href={route('profile.edit')}>
+          <Link href={route("profile.edit")}>
             <User />
             <span>Profile</span>
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="w-full py-2" asChild>
-          <Link as="button" href={route('logout')} method="post">
+          <Link as="button" href={route("logout")} method="post">
             <LogOut />
             <span>Log Out</span>
           </Link>

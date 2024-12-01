@@ -1,20 +1,20 @@
-import { Button } from '~/components/ui/button';
-import { Input } from '~/components/ui/input';
-import { Label } from '~/components/ui/label';
-import GuestLayout from '~/components/layouts/guest-layout';
-import { Head, useForm } from '@inertiajs/react';
-import { FormEventHandler } from 'react';
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
+import GuestLayout from "~/components/layouts/guest-layout";
+import { Head, useForm } from "@inertiajs/react";
+import { FormEventHandler } from "react";
 
 export default function ConfirmPassword() {
   const { data, setData, post, processing, errors, reset } = useForm({
-    password: '',
+    password: "",
   });
 
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
 
-    post(route('password.confirm'), {
-      onFinish: () => reset('password'),
+    post(route("password.confirm"), {
+      onFinish: () => reset("password"),
     });
   };
 
@@ -36,7 +36,7 @@ export default function ConfirmPassword() {
             name="password"
             value={data.password}
             className="mt-1 block w-full"
-            onChange={(e) => setData('password', e.target.value)}
+            onChange={(e) => setData("password", e.target.value)}
             error={errors.password}
             required
             autoFocus

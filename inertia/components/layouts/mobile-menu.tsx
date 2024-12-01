@@ -1,12 +1,12 @@
-import { InertiaLinkProps, Link, usePage } from '@inertiajs/react';
-import { cn } from '~/lib/utils';
+import { InertiaLinkProps, Link, usePage } from "@inertiajs/react";
+import { cn } from "~/lib/utils";
 import {
   Drawer,
   DrawerContent,
   DrawerHeader,
   DrawerTitle,
-} from '~/components/ui/drawer';
-import { NavigationLink } from './authenticated-layout';
+} from "~/components/ui/drawer";
+import { NavigationLink } from "./authenticated-layout";
 
 function MobileMenuButton({
   children,
@@ -17,8 +17,8 @@ function MobileMenuButton({
   return (
     <Link
       className={cn(
-        'text-start block w-full px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground rounded-md',
-        current && 'bg-accent/50',
+        "text-start block w-full px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground rounded-md",
+        current && "bg-accent/50",
         className,
       )}
       {...props}
@@ -70,15 +70,15 @@ export function MobileMenu({ links, toggle, show }: MobileMenuProps) {
             <div className="mt-3 space-y-1">
               <MobileMenuButton
                 onClick={() => toggle()}
-                href={route('profile.edit')}
-                current={route().current('profile.edit')}
+                href={route("profile.edit")}
+                current={route().current("profile.edit")}
               >
                 Profile
               </MobileMenuButton>
               <MobileMenuButton
                 onClick={() => toggle()}
                 as="button"
-                href={route('logout')}
+                href={route("logout")}
                 method="post"
               >
                 Log Out

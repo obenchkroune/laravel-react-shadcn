@@ -1,10 +1,10 @@
-import { createInertiaApp } from '@inertiajs/react';
-import createServer from '@inertiajs/react/server';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import ReactDOMServer from 'react-dom/server';
-import { RouteName, route } from 'ziggy-js';
+import { createInertiaApp } from "@inertiajs/react";
+import createServer from "@inertiajs/react/server";
+import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
+import ReactDOMServer from "react-dom/server";
+import { RouteName, route } from "ziggy-js";
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
 createServer((page) =>
   createInertiaApp({
@@ -14,7 +14,7 @@ createServer((page) =>
     resolve: (name) =>
       resolvePageComponent(
         `./pages/${name}.tsx`,
-        import.meta.glob('./pages/**/*.tsx'),
+        import.meta.glob("./pages/**/*.tsx"),
       ),
     setup: ({ App, props }) => {
       /* eslint-disable */

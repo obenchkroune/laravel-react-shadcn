@@ -1,9 +1,9 @@
-import { PageProps as InertiaPageProps } from '@inertiajs/core';
-import { AxiosInstance } from 'axios';
-import { Config } from 'ziggy-js';
-import { PageProps as AppPageProps } from './';
-import { RouteParams } from './param';
-import { CustomRouter } from './route';
+import { PageProps as InertiaPageProps } from "@inertiajs/core";
+import { AxiosInstance } from "axios";
+import { Config } from "ziggy-js";
+import { PageProps as AppPageProps } from "./";
+import { RouteParams } from "./param";
+import { CustomRouter } from "./route";
 
 declare global {
   interface Window {
@@ -20,6 +20,6 @@ declare global {
   var Ziggy: ZiggyConfig;
 }
 
-declare module '@inertiajs/core' {
+declare module "@inertiajs/core" {
   interface PageProps extends InertiaPageProps, AppPageProps {}
 }

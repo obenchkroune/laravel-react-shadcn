@@ -1,18 +1,18 @@
-import { Button } from '~/components/ui/button';
-import { Input } from '~/components/ui/input';
-import { Label } from '~/components/ui/label';
-import { Transition } from '@headlessui/react';
-import { Link, useForm, usePage } from '@inertiajs/react';
-import { FormEventHandler } from 'react';
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
+import { Transition } from "@headlessui/react";
+import { Link, useForm, usePage } from "@inertiajs/react";
+import { FormEventHandler } from "react";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '~/components/ui/card';
-import { PageProps } from '~/types';
-import { useToast } from '~/hooks/use-toast';
+} from "~/components/ui/card";
+import { PageProps } from "~/types";
+import { useToast } from "~/hooks/use-toast";
 
 export default function UpdateProfileInformation() {
   const { mustVerifyEmail, status, auth } = usePage<
@@ -31,11 +31,11 @@ export default function UpdateProfileInformation() {
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
 
-    patch(route('profile.update'), {
+    patch(route("profile.update"), {
       onSuccess: () => {
         toast({
-          title: 'Profile Updated',
-          description: 'Profile updated successfully.',
+          title: "Profile Updated",
+          description: "Profile updated successfully.",
         });
       },
     });
@@ -61,7 +61,7 @@ export default function UpdateProfileInformation() {
               id="name"
               name="name"
               value={data.name}
-              onChange={(e) => setData('name', e.target.value)}
+              onChange={(e) => setData("name", e.target.value)}
               required
               autoFocus
               autoComplete="name"
@@ -76,7 +76,7 @@ export default function UpdateProfileInformation() {
               type="email"
               name="email"
               value={data.email}
-              onChange={(e) => setData('email', e.target.value)}
+              onChange={(e) => setData("email", e.target.value)}
               required
               autoComplete="username"
               error={errors.email}
@@ -88,13 +88,13 @@ export default function UpdateProfileInformation() {
               <p className="mt-2 text-sm text-foreground">
                 Your email address is unverified.
                 <Button variant="link" asChild className="px-2">
-                  <Link href={route('verification.send')} method="post">
+                  <Link href={route("verification.send")} method="post">
                     Click here to re-send the verification email.
                   </Link>
                 </Button>
               </p>
 
-              {status === 'verification-link-sent' && (
+              {status === "verification-link-sent" && (
                 <div className="mt-2 text-sm font-medium text-primary">
                   A new verification link has been sent to your email address.
                 </div>
